@@ -1,0 +1,82 @@
+.dashboard{
+    background-color: rgb(91, 157, 255);
+}
+.title{
+    margin-top: -80px;
+    text-align: center;
+ 
+}
+.card-title{
+    border-radius: 20px !important;
+    max-width: 700px;
+    background-color: gray !important;
+    color: white !important;
+    font-weight: 100 !important;
+   
+}
+/* .card-title .card-body{
+    color: white !important;
+} */
+.frame{
+    width: auto;
+    /* background-color: yellow; */
+    /* height: 500px; */
+    display: flex;
+    
+    justify-content: center;
+}
+
+.frame img{
+    /* padding: 50px; */
+    width: 1375px;
+    height: 350px;
+    opacity: 0.8;
+    
+}
+
+.list-card{
+ padding: 20px 0 20px 0;
+}
+
+#about {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+#footer {
+    background: black;
+    padding: 40px;
+  }
+  
+  .judul-footer {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .kata-kata-footer {
+    color: #b6b2b2;
+    font-size: 18px;
+  }
+  
+  .copyright-footer {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+  }
+
+
+@media screen and (max-width: 640px) {
+    .frame img{
+        /* padding: 50px; */
+        width: 450px;
+        height: 250px;
+        
+    }
+    
+   
+    
+    .judul{
+        font-size: 16px;
+    }
+    
+}

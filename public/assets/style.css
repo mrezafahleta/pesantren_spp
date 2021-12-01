@@ -1,0 +1,37 @@
+.dashboard{
+    background-color: rgb(91, 157, 255);
+}
+.frame{
+    width: auto;
+    /* background-color: yellow; */
+    /* height: 500px; */
+    display: flex;
+    
+    justify-content: center;
+}
+
+.frame img{
+    /* padding: 50px; */
+    width: 1375px;
+    height: 548px;
+    
+}
+
+.list-card{
+ padding: 20px 0 20px 0;
+}
+
+
+@media screen and (max-width: 640px) {
+    .frame img{
+        /* padding: 50px; */
+        width: 450px;
+        height: 450px;
+        
+    }
+
+    .judul{
+        font-size: 16px;
+    }
+    
+}

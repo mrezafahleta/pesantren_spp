@@ -16,7 +16,7 @@ class CreateSppsTable extends Migration
         Schema::create('spps', function (Blueprint $table) {
             $table->id();
             $table->string('nomor_pembayaran');
-            $table->unsignedBigInteger('nim_murid');
+            $table->unsignedBigInteger('nik_murid');
             $table->string('pembayaran_ke');
             $table->integer('jumlah');
             $table->string('status');

@@ -52,9 +52,9 @@
                     <form action="{{ route('user.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="nim">Nim</label>
+                            <label for="nim">NIK</label>
                             <input type="text" name="nim_murid" id="cari_nim" class="form-control">
-                            @error('nim_murid')
+                            @error('nik_murid')
                             <div class="text-danger mt-1">{{ $message }}</div>
                             @enderror
                         </div>
@@ -105,7 +105,7 @@
                         <tbody>
                             @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->nim_murid }}</td>
+                                <td>{{ $user->nik_murid }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->role->name }}</td>
                                 <td>{{ $user->email }}</td>

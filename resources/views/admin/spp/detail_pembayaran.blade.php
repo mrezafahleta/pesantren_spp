@@ -5,20 +5,20 @@
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
-                          <h3>Nomor Induk Siswa : <b>{{ $data->nim }}</b> </h3>
+                          <h3>Nomor Induk Siswa : <b>{{ $data->nik }}</b> </h3>
                           <a href="{{ route('pembayaran.spp') }}" class="btn btn-danger">Kembali</a>
                 </div>
             </div>
             <div class="card-body">
                 <form action="{{ route('store.spp') }}" method="POST">
                     @csrf
-                    <input type="text" name="nim_murid" value="{{ $data->nim }}" hidden >
+                    <input type="text" name="nik_murid" value="{{ $data->nik }}" hidden >
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                               <table class="table">
                                   <tr>
                                       <th>Nomor Induk Siswa</th>
-                                      <td><b>{{ $data->nim }}</b></td>
+                                      <td><b>{{ $data->nik }}</b></td>
                                   </tr>
                                   <tr>
                                       <th>Nama</th>

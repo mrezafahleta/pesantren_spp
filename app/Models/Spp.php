@@ -12,7 +12,7 @@ class Spp extends Model
 
 
     public function student() {
-        return $this->belongsTo(Student::class, 'nim_murid','nim');
+        return $this->belongsTo(Student::class, 'nik_murid','nik');
     }
     
 

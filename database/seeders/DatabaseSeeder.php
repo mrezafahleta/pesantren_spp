@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+       
+        \App\Models\Student::factory(5000)->hasSpps(1)->create();
     }
 }

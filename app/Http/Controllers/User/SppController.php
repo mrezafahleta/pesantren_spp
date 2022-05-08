@@ -11,7 +11,7 @@ class SppController extends Controller
 {
     public function data()
     {
-        $spp = Spp::with('student')->where('nim_murid', Auth::user()->nim_murid)->get();
+        $spp = Spp::with('student')->where('nik_murid', Auth::user()->nik_murid)->get();
 
        return view('user.Spp', [
            'spp' => $spp

@@ -1,6 +1,4 @@
-.dashboard{
-    background-color: rgb(91, 157, 255);
-}
+
 .title{
     margin-top: -80px;
     text-align: center;
@@ -19,8 +17,7 @@
 } */
 .frame{
     width: auto;
-    /* background-color: yellow; */
-    /* height: 500px; */
+
     display: flex;
     
     justify-content: center;
@@ -28,20 +25,12 @@
 
 .frame img{
     /* padding: 50px; */
-    width: 1375px;
-    height: 350px;
-    opacity: 0.8;
+   width: 100%;
+   height: 600px;
+
     
 }
 
-.list-card{
- padding: 20px 0 20px 0;
-}
-
-#about {
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
 
 #footer {
     background: black;

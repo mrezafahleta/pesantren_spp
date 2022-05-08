@@ -12,8 +12,8 @@ class PenggunaController extends Controller
 {
     public function profil()
     {
-       $nim =  Auth::user()->nim_murid;
-        $students = Student::where('nim' , $nim)->first();
+       $nik =  Auth::user()->nik_murid;
+        $students = Student::where('nik' , $nik)->first();
         return view('user.profil', [
             'profil' => $students
         ]);
@@ -31,7 +31,7 @@ class PenggunaController extends Controller
             $foto = null;
         }
 
-        $student = Student::where('nim', $request->nim)->first();
+        $student = Student::where('nik', $request->nik)->first();
         $student->update([
             'foto' => $foto
         ]);
@@ -52,7 +52,7 @@ class PenggunaController extends Controller
             'tanggal_masuk' => "required",
         ],$validation);
 
-        $student = Student::where('nim', $request->nim)->first();
+        $student = Student::where('nik', $request->nik)->first();
 
         $student->update([
             'nama' => $request->nama,

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\ApiAuthController;
+use App\Http\Controllers\Api\ApiStudentsController;
+use App\Http\Controllers\Api\ApiUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', [ApiAuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+
+
+    Route::get('user', [ApiUserController::class, 'getDataUser']);
+    Route::get('sppApiStudents', [ApiStudentsController::class, 'getDataStudents']);
+    Route::get('sppApiStudent/{student:nim}/detailsiswa', [ApiStudentsController::class, 'student']);
+
+    Route::get('sppApiDetailStudent/{nim}', [ApiStudentsController::class, 'detailStudent']);
 });
+
+// Route::get('user', [ApiUserController::class, 'getDataUser']);
+// Route::get('sppApiStudents', [ApiStudentsController::class, 'getDataStudents']);

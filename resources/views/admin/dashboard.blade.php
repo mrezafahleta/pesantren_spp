@@ -11,9 +11,10 @@
 
 @section('content')
 <div class="dashboard text-white">
-    <h1 class="text-center">Selamat Datang di Dashboard Pesantren NURALLAH</h1>
+    <h1 class="text-center">Selamat Datang di Dashboard </h1>
+    <h1 class="text-center">Mahad Darul Ulum Al Burhan</h1>
     <div class="frame">
-        <img class="foto" src="{{ asset('assets/image/masjid.jpg') }}" alt="">
+        <img class="foto" src="{{ asset('assets/image/bg.jpeg') }}" alt="">
     </div>
 </div>
 @endsection

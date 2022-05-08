@@ -59,7 +59,7 @@
           
              <div class="wrap-logo">
                 <div class="wrap-kiri">
-                    <h5><i>Pesantren NURALLAH</i></h5>
+                    <h5><i>Pesantren Mahad Darul Ulum Al Burhan</i></h5>
                     <p style="margin-top: -10px">Telp : 0832193219</p>
                 </div>
                 <div class="wrap-kanan">
@@ -82,7 +82,7 @@
                     <tr>
                         <td>Nomor Induk Siswa</td>
                         <td>:</td>
-                        <th>{{ $spp->nim_murid }}</th>
+                        <th>{{ $spp->nik_murid }}</th>
                     </tr>
                     <tr>
                         <td>Nama</td>

@@ -17,6 +17,11 @@ class Student extends Model
 
     public function spps()
     {
-        return $this->hasMany(Spp::class, 'nim_murid', 'nim');
+        return $this->hasMany(Spp::class, 'nik_murid', 'nik');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'nik', 'nik_murid');
     }
 }

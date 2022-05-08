@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-lg">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            Pesantren NurAllah
+            Mahad Darul Ulum Al Burhan
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -20,10 +20,10 @@
                     <a class="nav-link" href="{{ route('dashboard') }}">Dashboard <span
                             class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item ">
+                {{-- <li class="nav-item ">
                     <a class="nav-link" href="{{ route('admin.user') }}">User  <span
                             class="sr-only">(current)</span></a>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,7 +31,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('siswa.data') }}">Data Murid</a>
-                        <a class="dropdown-item" href="{{ route('tambah.siswa') }}">Tambah Murid</a>
+                    
 
                     </div>
                 </li>

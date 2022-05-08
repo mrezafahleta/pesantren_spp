@@ -22,7 +22,7 @@ class StudentController extends Controller
 
     public function info(Student $student)
     {
-        $spp = Spp::where('nim_murid', $student->nim)->get();
+        $spp = Spp::where('nik_murid', $student->nik)->get();
         return view('admin.datasiswa.info', [
             'title' => 'Informasi Siswa',
             'student' => $student,
@@ -60,7 +60,7 @@ class StudentController extends Controller
             'image' => ':attribute harus berupa gambar'
         ];
         $request->validate([
-            'nim' => 'required|unique:students,nim',
+            'nik' => 'required|unique:students,nik',
             'foto' => "image|mimes:jpeg,jpg,png,svg",
             'nama' => 'required',
             'ttl' => 'required',
@@ -75,7 +75,7 @@ class StudentController extends Controller
         $foto = request()->file('foto')->storeAs('images/siswa', $nama_foto);
 
         Student::create([
-            "nim" => $request->nim,
+            "nik" => $request->nik,
             "nama" => $request->nama,
             "foto" => $foto,
             "ttl" => $request->ttl,
@@ -109,7 +109,7 @@ class StudentController extends Controller
         }
 
         $student->update([
-            "nim" => $request->nim,
+            "nik" => $request->nik,
             "nama" => $request->nama,
             "foto" => $foto,
             "ttl" => $request->ttl,
@@ -125,7 +125,7 @@ class StudentController extends Controller
     public function destroy($id)
     {
 
-        $student = Student::where('nim', $id)->first();
+        $student = Student::where('nik', $id)->first();
 
         Storage::delete($student->foto);
         $student->delete();

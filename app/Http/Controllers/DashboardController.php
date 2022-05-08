@@ -15,13 +15,14 @@ class DashboardController extends Controller
 
     public function index()
     {
-        
-        return view('admin.dashboard',[
+
+        return view('admin.dashboard', [
             'title' => 'Dashboard'
         ]);
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         redirect('/');
     }

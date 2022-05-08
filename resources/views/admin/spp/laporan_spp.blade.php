@@ -86,15 +86,15 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="card">
                         <div class="card-header text-center">
-                            Pencarian berdasarkan Nim
+                            Pencarian berdasarkan NIK
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('cari.spp.nim') }}" method="post">
+                            <form action="{{ route('cari.spp.nik') }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="">Nim</label>
+                                            <label for="">NIK</label>
                                             <input type="text" id="pencarian" name="pencarian"
                                                 class="form-control pencarian">
                                         </div>

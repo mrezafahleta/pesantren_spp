@@ -18,11 +18,11 @@
 </head>
 
 <body>
-    <x-navbar></x-navbar>
+    {{-- <x-navbar></x-navbar> --}}
 
     <section id="banner">
         <div class="frame">
-            <img class="foto" src="{{ asset('assets/image/masjid.jpg') }}" alt="">
+            <img class="foto" src="{{ asset('assets/image/bg.jpeg') }}" alt="">
         </div>
     </section>
 
@@ -32,9 +32,11 @@
                 <div class="col-md-12 title">
                     <div class="card card-title m-auto">
                         <div class="card-body">
-                            <h1 class="font-size-mob">PESANTREN NURALLAH</h1>
+                            <h1 class="font-size-mob">PESANTREN </h1>
+                            <h1>MAHAD DARUL ULUM AL BURHAN</h1>
                             <h4>Sumatera Selatan Palembang</h4>
-                            <h4 class="font-size-mob">Tahun Ajaran 2021/2022</h4>
+                            <h4 class="font-size-mob">Tahun Ajaran 2022/2023</h4>
+                            <a href="{{ route('pendaftaran') }}" class="btn btn-primary">Daftar</a>
                         </div>
                     </div>
                 </div>
@@ -63,13 +65,19 @@
             <div class="row">
                 <div class="owl-carousel owl-theme">      
                     <div class="item" >
-                        <h4><img src="{{ asset('assets/image/masjid.jpg') }}" alt=""></h4>
+                        <h4><img src="{{ asset('assets/image/bg.jpeg') }}" alt=""></h4>
                     </div>
                     <div class="item" >
-                        <h4><img src="{{ asset('assets/image/masjid.jpg') }}" alt=""></h4>
+                        <h4><img src="{{ asset('assets/image/bg1.jpeg') }}" alt=""></h4>
                     </div>
                     <div class="item" >
-                        <h4><img src="{{ asset('assets/image/masjid.jpg') }}" alt=""></h4>
+                        <h4><img src="{{ asset('assets/image/bg3.jpeg') }}" alt=""></h4>
+                    </div>
+                    <div class="item" >
+                        <h4><img src="{{ asset('assets/image/bg4.jpeg') }}" alt=""></h4>
+                    </div>
+                    <div class="item" >
+                        <h4><img src="{{ asset('assets/image/bg5.jpeg') }}" alt=""></h4>
                     </div>
                     
                 </div>
@@ -82,7 +90,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="judul-footer">
-                        <p>Pesantren NurAllah</p>
+                        <p>Pesantren Mahad Darul Ulum Al Burhan</p>
                     </div>
                     <div class="kata-kata-footer">
                         <p>
@@ -96,8 +104,7 @@
                     </div>
                     <div class="kata-kata-footer">
                         <p>
-                            Bukit Lama Palembang
-                            Sumatera Selatan
+                          Jl. Jend. Basuki Rachmat, Ario Kemuning, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan 30151
                     </p>
                     </div>
                 </div>
@@ -106,8 +113,8 @@
                         <p>Sosial Media</p>
                     </div>
                     <div class="kata-kata-footer">
-                        <p>IG: Pesantren NurAllah</p>
-                        <p>Facebook : Pesantren NurAllah</p>
+                        <a href="https://www.instagram.com/mahaddarululum_alburhan/?hl=id">IG: Mahad Darul Ulum Al Burhan</a>
+                        {{-- <p>Facebook : Pesantren NurAllah</p> --}}
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -115,11 +122,11 @@
                         <p>Contact</p>
                     </div>
                     <div class="kata-kata-footer">
-                        <p>
+                        {{-- <p>
                             mrezafahleta1997@gmail.com
-                    </p>
+                    </p> --}}
                         <p>
-                            0857 - 8988 - 7363
+                            (0711) 814477
                     </p>
                     </div>
                 </div>
@@ -127,7 +134,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p class="copyright-footer">
-                        Copyright 2021 • All rights reserved • Pesantren  NurAllah
+                        Copyright 2021 • All rights reserved • Pesantren  MAHAD DARUL ULUM AL BURHAN
                 </p>
                 </div>
             </div>

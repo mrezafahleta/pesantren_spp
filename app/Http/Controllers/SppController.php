@@ -20,9 +20,10 @@ class SppController extends Controller
 
     public function pencarian_nis(Student $student, Request $request)
     {
-        $data = Student::with('spps')->where('nim', $request->pencarian)->first();
-        $total_pembayaran = Spp::where('nim_murid', $request->pencarian)->sum('jumlah');
-        $telah_bayar = Spp::where('nim_murid', $request->pencarian)->count('pembayaran_ke');
+
+        $data = Student::with('spps')->where('nik', $request->pencarian)->first();
+        $total_pembayaran = Spp::where('nik_murid', $request->pencarian)->sum('jumlah');
+        $telah_bayar = Spp::where('nik_murid', $request->pencarian)->count('pembayaran_ke');
 
         if (!$data) {
             return redirect()->route('pembayaran.spp')->with('notfound', 'Data tidak ditemukan!!!');
@@ -42,14 +43,14 @@ class SppController extends Controller
 
         $search = $request->search;
         if ($search == '') {
-            $students = Student::orderby('id', 'asc')->select('nim', 'nama')->limit(5)->get();
+            $students = Student::orderby('id', 'asc')->select('nik', 'nama')->limit(5)->get();
         } else {
-            $students = Student::orderby('id', 'asc')->select('nim', 'nama')->where('nim', 'like', '%' . $search . '%')->limit(5)->get();
+            $students = Student::orderby('id', 'asc')->select('nik', 'nama')->where('nik', 'like', '%' . $search . '%')->limit(5)->get();
         }
 
         $response = array();
         foreach ($students as $student) {
-            $response[] = array("value" => $student->nim, "label" => $student->nama);
+            $response[] = array("value" => $student->nik, "label" => $student->nama);
         }
 
         return response()->json($response);
@@ -57,22 +58,23 @@ class SppController extends Controller
 
     public function store(Request $request)
     {
-        $nomor = 1;
+       
         $messages = [
             'required' => 'Kolom :attribute tidak boleh kosong! ',
         ];
         $request->validate([
-            'nim_murid' => 'required',
+            'nik_murid' => 'required',
             'jumlah' => 'required',
             'pembayaran_ke' => 'required',
             'status' => "required",
             'tanggal_bayar' => 'required',
         ], $messages);
 
-
+        $nomor = Spp::latest()->first();
+      
         Spp::create([
-            'nomor_pembayaran' => $nomor,
-            'nim_murid' => $request->nim_murid,
+            'nomor_pembayaran' =>  "spb". $nomor['nomor_pembayaran'] + 1,
+            'nik_murid' => $request->nik_murid,
             'pembayaran_ke' => $request->pembayaran_ke,
             'jumlah' => $request->jumlah,
             'tanggal_bayar' => $request->tanggal_bayar,

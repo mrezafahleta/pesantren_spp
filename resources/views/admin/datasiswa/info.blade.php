@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header bg-dark text-white">
             <h4 class="text-center">Detail Data <i>{{ $student->nama }}</i></h4>
-            <h5  class="text-center">({{ $student->nim }})</h5>
+            <h5  class="text-center">({{ $student->nik }})</h5>
         </div>
         <div class="card-body">
             <div class="row">
@@ -17,8 +17,13 @@
                                 <div class="col-md-12">
                                     <h2 class="text-center mb-3">Profil</h2>
                                 </div>
+                                @if ($student->foto == NULL)
                                 <img class="img-fluid rounded-circle m-auto" style="width: 250px; height:200px"
-                                    src="{{ $student->takeImage }}">
+                                    src="{{ asset('assets/image/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg') }}">
+                                 
+                                @else
+                                  <img class="img-fluid rounded-circle m-auto" style="width: 250px; height:200px" src="{{ $student->takeImage }}">
+                                @endif
                                 <table class="table mt-2 ">
                                     <tr>
                                         <th>

@@ -53,11 +53,12 @@
                 data: {
                     // _token: CSRF_TOKEN,
                     search: request.term
+                    
                 },
                 success: function (data, angka) {
 
                     response(data);
-
+console.log(response);
                 }
             });
         },
@@ -133,14 +134,14 @@
                 <tbody>
                     @foreach ($spps as $spp)
                     <tr>
-                        <td>{{ $spp->nim_murid }}</td>
+                        <td>{{ $spp->nik_murid }}</td>
                         <td>{{ $spp->student['nama'] }}</td>
                         <td>{{ $spp->pembayaran_ke }}</td>
                         <td>{{ $spp->jumlah }}</td>
                         <td>{{ $spp->status }}</td>
                         <td>{{ $spp->tanggal_bayar }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('viewCetak.spp', $spp->nim_murid) }}">Cetak</a>
+                            <a class="btn btn-primary" href="{{ route('viewCetak.spp', $spp->nik_murid) }}">Cetak</a>
                         </td>
                     </tr>
                     @endforeach

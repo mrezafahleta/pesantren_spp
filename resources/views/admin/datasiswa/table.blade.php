@@ -33,7 +33,9 @@
         });
     });
     $('#myTable').DataTable({
-        responsive: true
+        responsive: true,
+        
+        
     });
     
  
@@ -86,10 +88,10 @@
 
             @endif
             <div class="card-body">
-                <table id="myTable" class="table  table-bordered dt-responsive wrap" style="width:100%">
+                <table id="myTable" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>NIM</th>
+                            <th>NIK</th>
                             <th>Nama</th>
                             <th>TTL</th>
                         
@@ -100,22 +102,22 @@
                     <tbody>
                         @foreach ($students as $student)
                         <tr>
-                            <td>{{ $student->nim }}</td>
+                            <td>{{ $student->nik }}</td>
                             <td>{{ $student->nama }}</td>
                          
                             <td>{{ $student->alamat }}</td>
                             <td>{{ $student->telp }}</td>
                             <td style="">
                                 <div class="d-flex justify-content-around">
-                                    <a href="{{ route('siswa.info', $student->nim) }}"
+                                    <a href="{{ route('siswa.info', $student->nik) }}"
                                         class="btn btn-info text-white ml-2">Info</a>
-                                    <a href="{{ route('siswa.edit', $student->nim) }}"
+                                    <a href="{{ route('siswa.edit', $student->nik) }}"
                                         class="btn btn-info text-white ml-2">Edit</a>
                                         
                                     <a href="javascript:void(0)"
-                                        id="delete" onclick="deleteData({{$student->nim}})" class="btn btn-danger text-white ml-2">Delete</a>
+                                        id="delete" onclick="deleteData({{$student->nik}})" class="btn btn-danger text-white ml-2">Delete</a>
                                         
-                                    {{-- <form id="hapus" action="{{ route('siswa.delete',$student->nim) }}" method="POST"
+                                    {{-- <form id="hapus" action="{{ route('siswa.delete',$student->nik) }}" method="POST"
                                         class="">
                                         @csrf
                                         @method('delete')

@@ -1,0 +1,44 @@
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+}
+
+.daftar {
+    position: relative;
+    min-height: 100%;
+}
+
+.content {
+    
+}
+
+.footer {
+    
+    background: rgb(1, 1, 17);
+
+    height:auto;
+    padding: 25px 20px;
+    width: 100%;
+}
+
+.judul-footer {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.kata-kata-footer {
+    color: #b6b2b2;
+    font-size: 18px;
+}
+
+.copyright-footer {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 640px) {}

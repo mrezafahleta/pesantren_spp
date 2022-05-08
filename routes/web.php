@@ -13,34 +13,36 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/pendaftaran', [HomeController::class,'pendaftaran'])->name('pendaftaran');
+Route::post('/pendaftaran', [HomeController::class,'store'])->name('store.pendaftaran');
 
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('user.dashboard');
     Route::get('profil', [PenggunaController::class, 'profil'])->name('user.profil');
-    Route::put('profil',[PenggunaController::class,'update_profil'])->name('update.profil');
-    Route::put('fotoprofil',[PenggunaController::class, 'update_foto_profil'])->name('update.foto');
-    Route::get('pembayaran-spp', [UserSppController::class, 'data' ])->name('data.spp');
+    Route::put('profil', [PenggunaController::class, 'update_profil'])->name('update.profil');
+    Route::put('fotoprofil', [PenggunaController::class, 'update_foto_profil'])->name('update.foto');
+    Route::get('pembayaran-spp', [UserSppController::class, 'data'])->name('data.spp');
 });
 
 Route::prefix('admin')->middleware('role:Admin', 'auth')->group(function () {
 
     // user pengguna
     Route::get('user', [UserController::class, 'data'])->name('admin.user');
-    Route::post('user',[UserController::class,'store'])->name('user.store');
-    Route::get('user/getnim', [UserController::class, 'loadnimsiswa'])->name('cari-user');
+    Route::post('user', [UserController::class, 'store'])->name('user.store');
+    Route::get('user/getnik', [UserController::class, 'loadniksiswa'])->name('cari-user');
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-  
+
 
     Route::get('data_siswa', [StudentController::class, 'index'])->name('siswa.data');
-    Route::get('siswa/{student:nim}/info', [StudentController::class, 'info'])->name('siswa.info');
+    Route::get('siswa/{student:nik}/info', [StudentController::class, 'info'])->name('siswa.info');
 
     Route::get('siswa/tambah_siswa', [StudentController::class, 'create'])->name('tambah.siswa');
     Route::post('siswa/store', [StudentController::class, 'store']);
-    Route::get('siswa/{student:nim}/edit', [StudentController::class, 'edit'])->name('siswa.edit');
-    Route::put('siswa/{student:nim}/edit', [StudentController::class, 'update']);
-    Route::delete('data_siswa/delete/{student:nim}', [StudentController::class, 'destroy'])->name('siswa.delete');
+    Route::get('siswa/{student:nik}/edit', [StudentController::class, 'edit'])->name('siswa.edit');
+    Route::put('siswa/{student:nik}/edit', [StudentController::class, 'update']);
+    Route::delete('data_siswa/delete/{student:nik}', [StudentController::class, 'destroy'])->name('siswa.delete');
 
     // SPP
     Route::get('pembayaran/spp', [SppController::class, 'index'])->name('pembayaran.spp');
@@ -50,10 +52,10 @@ Route::prefix('admin')->middleware('role:Admin', 'auth')->group(function () {
     Route::get('pembayaran/spp/getSiswa/', [SppController::class, 'loadDataSiswa'])->name('cari-siswa');
 
     // cetak laporan
-    Route::get('{spp:nim_murid}/cetak', [LaporanController::class, 'viewCetak'])->name('viewCetak.spp');
-    Route::get('{spp:nim_murid}/cetakdata', [LaporanController::class, 'cetakspp'])->name('cetak.spp');
+    Route::get('{spp:nik_murid}/cetak', [LaporanController::class, 'viewCetak'])->name('viewCetak.spp');
+    Route::get('{spp:nik_murid}/cetakdata', [LaporanController::class, 'cetakspp'])->name('cetak.spp');
     Route::get('laporan/spp', [LaporanController::class, 'laporan'])->name('laporan.spp');
     Route::post('laporan/spp1', [LaporanController::class, 'cari_laporan'])->name('cari.spp');
     Route::get('laporan/spp/getSiswa/', [LaporanController::class, 'loadDataSiswa'])->name('laporan.cari-siswa');
-    Route::post('laporan/spp2', [LaporanController::class, 'cari_laporan_nim'])->name('cari.spp.nim');
+    Route::post('laporan/spp2', [LaporanController::class, 'cari_laporan_nik'])->name('cari.spp.nik');
 });
